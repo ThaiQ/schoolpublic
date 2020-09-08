@@ -17,7 +17,6 @@ function isExist(value) {
     for (let i = 0; i < count.length; i++) {
         if (value == count[i].getName()) return i
     }
-    return -1;
 }
 
 function selectionSort(){
@@ -30,7 +29,7 @@ function selectionSort(){
     for (let i = 0; i < count.length; i++){
         let min = i
         for (let j = i+1; j < count.length; j++){
-            if (count[i].getName()<count[j].getName()) min = j
+            if (count[min].getValue()<count[j].getValue()) min = j
         }
         swap(min, i)
     }
@@ -38,32 +37,32 @@ function selectionSort(){
 
 function encryption(string){
     let dictionary = []
-    dictionary['a'] = 'd'
-    dictionary['b'] = 'e'
-    dictionary['c'] = 'f'
-    dictionary['d'] = 'g'
-    dictionary['e'] = 'h'
-    dictionary['f'] = 'i'
-    dictionary['g'] = 'j'
-    dictionary['h'] = 'k'
-    dictionary['i'] = 'l'
-    dictionary['j'] = 'm'
-    dictionary['k'] = 'n'
-    dictionary['l'] = 'o'
-    dictionary['m'] = 'p'
-    dictionary['n'] = 'q'
-    dictionary['o'] = 'r'
-    dictionary['p'] = 's'
-    dictionary['q'] = 't'
-    dictionary['r'] = 'u'
-    dictionary['s'] = 'v'
-    dictionary['t'] = 'w'
-    dictionary['u'] = 'h'
-    dictionary['v'] = 'y'
-    dictionary['w'] = 'z'
-    dictionary['h'] = 'a'
-    dictionary['y'] = 'b'
-    dictionary['z'] = 'c'
+    dictionary['a'] = 'q'
+    dictionary['b'] = 'w'
+    dictionary['c'] = 'e'
+    dictionary['d'] = 'r'
+    dictionary['e'] = 't'
+    dictionary['f'] = 'y'
+    dictionary['g'] = 'u'
+    dictionary['h'] = 'i'
+    dictionary['i'] = 'o'
+    dictionary['j'] = 'p'
+    dictionary['k'] = 'a'
+    dictionary['l'] = 's'
+    dictionary['m'] = 'd'
+    dictionary['n'] = 'f'
+    dictionary['o'] = 'g'
+    dictionary['p'] = 'h'
+    dictionary['q'] = 'j'
+    dictionary['r'] = 'k'
+    dictionary['s'] = 'l'
+    dictionary['t'] = 'z'
+    dictionary['u'] = 'x'
+    dictionary['v'] = 'c'
+    dictionary['w'] = 'v'
+    dictionary['h'] = 'b'
+    dictionary['y'] = 'n'
+    dictionary['z'] = 'm'
     let newString = ''
     for (let i = 0; i < string.length; i ++) {
         if (string[i]==' ')  newString = newString+' '
@@ -85,33 +84,8 @@ function encryption(string){
  */
 
  //Actual sentences
-let actual = "Letter frequency is simply the amount of times letters of the alphabet appear on average in written language. Letter frequency analysis dates back to the Arab mathematician Al-Kindi (c. 801–873 AD), who formally developed the method to break ciphers. Letter frequency analysis gained importance in Europe with the development of movable type in 1450 AD, where one must estimate the amount of type required for each letterform. Linguists use letter frequency analysis as a rudimentary technique for language identification, where it's particularly effective as an indication of whether an unknown writing system is alphabetic, syllabic, or ideographic.\
-The use of letter frequencies and frequency analysis plays a fundamental role in cryptograms and several word puzzle games, including Hangman, Scrabble and the television game show Wheel of Fortune. One of the earliest descriptions in classical literature of applying the knowledge of English letter frequency to solving a cryptogram is found in Edgar Allan Poe's famous story The Gold-Bug, where the method is successfully applied to decipher a message instructing on the whereabouts of a treasure hidden by Captain Kidd.[1]\
-Letter frequencies also have a strong effect on the design of some keyboard layouts. The most frequent letters are on the bottom row of the Blickensderfer typewriter, and the home row of the Dvorak keyboard layout.\
-The frequency of letters in text has been studied for use in cryptanalysis, and frequency analysis in particular, dating back to the Iraqi mathematician Al-Kindi (c. 801–873 AD), who formally developed the method (the ciphers breakable by this technique go back at least to the Caesar cipher invented by Julius Caesar, so this method could have been explored in classical times). Letter frequency analysis gained additional importance in Europe with the development of movable type in 1450 AD, where one must estimate the amount of type required for each letterform, as evidenced by the variations in letter compartment size in typographer's type cases.\
-No exact letter frequency distribution underlies a given language, since all writers write slightly differently. However, most languages have a characteristic distribution which is strongly apparent in longer texts. Even language changes as extreme as from old English to modern English (regarded as mutually unintelligible) show strong trends in related letter frequencies: over a small sample of Biblical passages, from most frequent to least frequent, enaid sorhm tgþlwu æcfy ðbpxz of old English compares to eotha sinrd luymw fgcbp kvjqxz of modern English, with the most extreme differences concerning letterforms not shared.[2]\
-Linotype machines for the English language assumed the letter order, from most to least common, to be etaoin shrdlu cmfwyp vbgkjq xz based on the experience and custom of manual compositors. The equivalent for the French language was elaoin sdrétu cmfhyp vbgwqj xz.\
-Arranging the alphabet in Morse into groups of letters that require equal amounts of time to transmit, and then sorting these groups in increasing order, yields e it san hurdm wgvlfbk opxcz jyq.[a] Letter frequency was used by other telegraph systems, such as the Murray Code.\
-Similar ideas are used in modern data-compression techniques such as Huffman coding.\
-Letter frequencies, like word frequencies, tend to vary, both by writer and by subject. One cannot write an essay about x-rays without using frequent Xs, and the essay will have an idiosyncratic letter frequency if the essay is about the use of x-rays to treat zebras in Qatar. Different authors have habits which can be reflected in their use of letters. Hemingway's writing style, for example, is visibly different from Faulkner's. Letter, bigram, trigram, word frequencies, word length, and sentence length can be calculated for specific authors, and used to prove or disprove authorship of texts, even for authors whose styles are not so divergent.\
-Accurate average letter frequencies can only be gleaned by analyzing a large amount of representative text. With the availability of modern computing and collections of large text corpora, such calculations are easily made. Examples can be drawn from a variety of sources (press reporting, religious texts, scientific texts and general fiction) and there are differences especially for general fiction with the position of 'h' and 'i', with 'h' becoming more common.\
-Herbert S. Zim, in his classic introductory cryptography text 'Codes and Secret Writing', gives the English letter frequency sequence as 'ETAON RISHD LFCMU GYPWB VKJXZQ', the most common letter pairs as 'TH HE AN RE ER IN ON AT ND ST ES EN OF TE ED OR TI HI AS TO', and the most common doubled letters as 'LL EE SS OO TT FF RR NN PP CC'.[3]\
-Also, to note that different dialects of a language will also affect a letter's frequency. For example, an author in the United States would produce something in which the letter 'z' is more common than an author in the United Kingdom writing on the same topic: words like 'analyze', 'apologize', and 'recognize' contain the letter in American English, whereas the same words are spelled 'analyse', 'apologise', and 'recognise' in British English. This would highly affect the frequency of the letter 'z' as it is a rarely used letter by British speakers in the English language.[4]\
-The 'top twelve' letters constitute about 80% of the total usage. The 'top eight' letters constitute about 65% of the total usage. Letter frequency as a function of rank can be fitted well by several rank functions, with the two-parameter Cocho/Beta rank function being the best.[5] Another rank function with no adjustable free parameter also fits the letter frequency distribution reasonably well[6] (the same function has been used to fit the amino acid frequency in protein sequences.[7]) A spy using the VIC cipher or some other cipher based on a straddling checkerboard typically uses a mnemonic such as 'a sin to err' (dropping the second 'r')[8][9] or 'at one sir'[10] to remember the top eight characters.\
-There are three ways to count letter frequency that result in very different charts for common letters. The first method, used in the chart below, is to count letter frequency in root words of a dictionary. The second is to include all word variants when counting, such as 'abstracts', 'abstracted' and 'abstracting' and not just the root word of 'abstract'. This system results in letters like 's' appearing much more frequently, such as when counting letters from lists of the most used English words on the Internet. A final variant is to count letters based on their frequency of use in actual texts, resulting in certain letter combinations like 'th' becoming more common due to the frequent use of common words like 'the', 'then', 'both', etc. Absolute usage frequency measures like this are used when creating keyboard layouts or letter frequencies in old fashioned printing presses.\
-An analysis of entries in the Concise Oxford dictionary, ignoring frequency of word use, gives an order of 'EARIOTNSLCUDPMHGBFYWKVXZJQ'.[11]\
-The letter-frequency table below is taken from Pavel Mička's website, which cites Robert Lewand's Cryptological Mathematics.[12]\
-According to Lewand, arranged from most to least common in appearance, the letters are: etaoinshrdlcumwfgypbvkjxqz. Lewand's ordering differs slightly from others, such as Cornell University Math Explorer's Project, which produced a table after measuring 40,000 words.[13]\
-In English, the space is slightly more frequent than the top letter (e)[14] and the non-alphabetic characters (digits, punctuation, etc.) collectively occupy the fourth position (having already included the space) between t and a.[15]\
-The frequency of the first letters of words or names is helpful in pre-assigning space in physical files and indexes.[16] Given 26 filing cabinet drawers, rather than a 1:1 assignment of one drawer to one letter of the alphabet, it is often useful to use a more equal-frequency-letter code by assigning several low-frequency letters to the same drawer (often one drawer is labeled VWXYZ), and to split up the most-frequent initial letters ('S', 'A', and 'C') into several drawers (often 6 drawers Aa-An, Ao-Az, Ca-Cj, Ck-Cz, Sa-Si, Sj-Sz). The same system is used in some multi-volume works such as some encyclopedias. Cutter numbers, another mapping of names to a more equal-frequency code, are used in some libraries.\
-Both the overall letter distribution and the word-initial letter distribution approximately match the Zipf distribution and even more closely match the Yule distribution.[17]\
-Often the frequency distribution of the first digit in each datum is significantly different from the overall frequency of all the digits in a set of numeric data, see Benford's law for details.\
-An analysis by Peter Norvig on Google Books data determined, among other things, the frequency of first letters of English words.[18]\
-It's time for another blog post about ciphers. As I indicated in my previous blog post about substitution ciphers, the classical substitution cipher is no longer used to encrypt ultra-secret messages because the enciphered text is prone to a type of statistical attack known as frequency analysis.\
-At the root of frequency analysis is the fact that certain letters in English prose appear more frequently than other letters. In a simple substitution cipher, each letters is disguised by replacing it with some other symbol. However, a leopard cannot change its spots, and the frequencies of the symbols in an enciphered text can reveal which symbols correspond to certain letters. In a sufficiently long message, the symbols for common letters such as E, T, and A will appear often in the ciphertext, whereas the symbols for uncommon letters such as J, Q, and Z will occur rarely in the ciphertext.\
-The Wikipedia article on frequency analysis contains a nice example of how frequency analysis can be used to decrypt simple ciphers. This type of frequency analysis is usually one step in solving recreational puzzles, such the popular Cryptoquote puzzle that appears in many newspapers.\
-The first task for a budding cryptanalyst is to determine the frequency distribution of letters in the language that he is deciphering. This is done by counting the number of times that each letter appears in a corpus: a large set of text (articles, books, web documents,...) that is representative of the written language. In today's world of digitized texts and rapid computing, it is easier than ever to compute the distribution of letters in a large corpus. This was done recently by Peter Norvig who used Google's digitized library as a corpus. I highly recommend Norvig's fascinating presentation of the frequency distribution of letters, words, and N-grams.\
-Since Norvig did the hard work, it is simple to enter the relative frequencies of each letter into SAS and visualize the results, as follows:'\
+let actual = "When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow. When it healed, and Jem’s fears of never being able to play football were assuaged, he was seldom self-conscious about his injury. His left arm was somewhat shorter than his right; when he stood or walked, the back of his hand was at right angles to his body, his thumb parallel to his thigh. He couldn’t have cared less, so long as he could pass and punt. When enough years had gone by to enable us to look back on them, we sometimes discussed the events leading to his accident. I maintain that the Ewells started it all, but Jem, who was four years my senior, said it started long before that. He said it began the summer Dill came to us, when Dill first gave us the idea of making Boo Radley come out. I said if he wanted to take a broad view of the thing, it really began with Andrew Jackson. If General Jackson hadn’t run the Creeks up the creek, Simon Finch would never have paddled up the Alabama, and where would we be if he hadn’t? We were far too old to settle an argument with a fist-fight, so we consulted Atticus. Our father said we were both right. Being Southerners, it was a source of shame to some members of the family that we had no recorded ancestors on either side of the Battle of Hastings. All we had was Simon Finch, a fur-trapping apothecary from Cornwall whose piety was exceeded only by his stinginess. In England, Simon was irritated by the persecution of those who called themselves Methodists at the hands of their more liberal brethren, and as Simon called himself a Methodist, he worked his way across the Atlantic to Philadelphia, thence to Jamaica, thence to Mobile, and up the Saint Stephens. Mindful of John Wesley’s strictures on the use of many words in buying and selling, Simon made a pile practicing medicine, but in this pursuit he was unhappy lest he be tempted into doing what he knew was not for the glory of God, as the putting on of gold and costly apparel. So Simon, having forgotten his teacher’s dictum on the possession of human chattels, bought three slaves and with their aid established a homestead on the banks of the Alabama River some forty miles above Saint Stephens. He returned to Saint Stephens only once, to find a wife, and with her established a line that ran high to daughters. Simon lived to an impressive age and died rich. It was customary for the men in the family to remain on Simon’s homestead, Finch’s Landing, and make their living from cotton. The place was self-sufficient: modest in comparison with the empires around it, the Landing nevertheless produced everything required to sustain life except ice, wheat flour, and articles of clothing, supplied by river-boats from Mobile. Simon would have regarded with impotent fury the disturbance between the North and the South, as it left his descendants stripped of everything but their land, yet the tradition of living on the land remained unbroken until well into the twentieth century, when my father, Atticus Finch, went to Montgomery to read law, and his younger brother went to Boston to study medicine. Their sister Alexandra was the Finch who remained at the Landing: she married a taciturn man who spent most of his time lying in a hammock by the river wondering if his trot-lines were full. When my father was admitted to the bar, he returned to Maycomb and began his practice. Maycomb, some twenty miles east of Finch’s Landing, was the county seat of Maycomb County. Atticus’s office in the courthouse contained little more than a hat rack, a spittoon, a checkerboard and an unsullied Code of Alabama. His first two clients were the last two persons hanged in the Maycomb County jail. Atticus had urged them to accept the state’s generosity in allowing them to plead Guilty to second-degree murder and escape with their lives, but they were Haverfords, in Maycomb County a name synonymous with jackass. The Haverfords had dispatched Maycomb’s leading blacksmith in a misunderstanding arising from the alleged wrongful detention of a mare, were imprudent enough to do it in the presence of three witnesses, and insisted that the-son-of-a-bitch-had-it-coming-to-him was a good enough defense for anybody. They persisted in pleading Not Guilty to first-degree murder, so there was nothing much Atticus could do for his clients except be present at their departure, an occasion that was probably the beginning of my father’s profound distaste for the practice of criminal law. During his first five years in Maycomb, Atticus practiced economy more than anything; for several years thereafter he invested his earnings in his brother’s education. John Hale Finch was ten years younger than my father, and chose to study medicine at a time when cotton was not worth growing; but after getting Uncle Jack started, Atticus derived a reasonable income from the law. He liked Maycomb, he was Maycomb County born and bred; he knew his people, they knew him, and because of Simon Finch’s industry, Atticus was related by blood or marriage to nearly every family in the town. Maycomb was an old town, but it was a tired old town when I first knew it. In rainy weather the streets turned to red slop; grass grew on the sidewalks, the courthouse sagged in the square. Somehow, it was hotter then: a black dog suffered on a summer’s day; bony mules hitched to Hoover carts flicked flies in the sweltering shade of the live oaks on the square. Men’s stiff collars wilted by nine in the morning. Ladies bathed before noon, after their three-o’clock naps, and by nightfall were like soft teacakes with frostings of sweat and sweet talcum. People moved slowly then. They ambled across the square, shuffled in and out of the stores around it, took their time about everything. A day was twenty-four hours long but seemed longer. There was no hurry, for there was nowhere to go, nothing to buy and no money to buy it with, nothing to see outside the boundaries of Maycomb County. But it was a time of vague optimism for some of the people: Maycomb County had recently been told that it had nothing to fear but fear itself.\
+We lived on the main residential street in town—Atticus, Jem and I, plus Calpurnia our cook. Jem and I found our father satisfactory: he played with us, read to us, and treated us with courteous detachment. Calpurnia was something else again. She was all angles and bones; she was nearsighted; she squinted; her hand was wide as a bed slat and twice as hard. She was always ordering me out of the kitchen, asking me why I couldn’t behave as well as Jem when she knew he was older, and calling me home when I wasn’t ready to come. Our battles were epic and one-sided. Calpurnia always won, mainly because Atticus always took her side. She had been with us ever since Jem was born, and I had felt her tyrannical presence as long as I could remember. Our mother died when I was two, so I never felt her absence. She was a Graham from Montgomery; Atticus met her when he was first elected to the state legislature. He was middle-aged then, she was fifteen years his junior. Jem was the product of their first year of marriage; four years later I was born, and two years later our mother died from a sudden heart attack. They said it ran in her family. I did not miss her, but I think Jem did. He remembered her clearly, and sometimes in the middle of a game he would sigh at length, then go off and play by himself behind the car-house. When he was like that, I knew better than to bother him. When I was almost six and Jem was nearly ten, our summertime boundaries (within calling distance of Calpurnia) were Mrs. Henry Lafayette Dubose’s house two doors to the north of us, and the Radley Place three doors to the south. We were never tempted to break them. The Radley Place was inhabited by an unknown entity the mere description of whom was enough to make us behave for days on end; Mrs. Dubose was plain hell. That was the summer Dill came to us. Early one morning as we were beginning our day’s play in the back yard, Jem and I heard something next door in Miss Rachel Haverford’s collard patch. We went to the wire fence to see if there was a puppy— Miss Rachel’s rat terrier was expecting—instead we found someone sitting looking at us. Sitting down, he wasn’t much higher than the collards. We stared at him until he spoke: “Hey.” “Hey yourself,” said Jem pleasantly. “I’m Charles Baker Harris,” he said. “I can read.” “So what?” I said. “I just thought you’d like to know I can read. You got anything needs readin’ I can do it....” “How old are you,” asked Jem, “four-and-a-half?” “Goin’ on seven.” “Shoot no wonder, then,” said Jem, jerking his thumb at me. “Scout yonder’s been readin’ ever since she was born, and she ain’t even started to school yet. You look right puny for goin’ on seven.” “I’m little but I’m old,” he said. Jem brushed his hair back to get a better look. “Why don’t you come over, Charles Baker Harris?” he said. “Lord, what a name.” “’s not any funnier’n yours. Aunt Rachel says your name’s Jeremy Atticus Finch.” Jem scowled. “I’m big enough to fit mine,” he said. “Your name’s longer’n you are. Bet it’s a foot longer.” “Folks call me Dill,” said Dill, struggling under the fence. “Do better if you go over it instead of under it,” I said. “Where’d you come from?” Dill was from Meridian, Mississippi, was spending the summer with his aunt, Miss Rachel, and would be spending every summer in Maycomb from now on. His family was from Maycomb County originally, his mother worked for a photographer in Meridian, had entered his picture in a Beautiful Child contest and won five dollars. She gave the money to Dill, who went to the picture show twenty times on it. “Don’t have any picture shows here, except Jesus ones in the courthouse sometimes,” said Jem. “Ever see anything good?” Dill had seen Dracula, a revelation that moved Jem to eye him with the beginning of respect. “Tell it to us,” he said. Dill was a curiosity. He wore blue linen shorts that buttoned to his shirt, his hair was snow white and stuck to his head like duckfluff; he was a year my senior but I towered over him. As he told us the old tale his blue eyes would lighten and darken; his laugh was sudden and happy; he habitually pulled at a cowlick in the center of his forehead. When Dill reduced Dracula to dust, and Jem said the show sounded better than the book, I asked Dill where his father was: “You ain’t said anything about him.” “I haven’t got one.”'\
 "
 actual = actual.toLowerCase()
 
@@ -124,17 +98,18 @@ let count = []
 for (let i = 0; i < string.length; i ++) {
     if (isLetter(string[i])) {
         let index = isExist(string[i])
-        if (index>-1) count[index].setValue((count[index].getValue()+1)/actual.length)
+        if (index>-1) count[index].setValue((count[index].getValue()+1))
         else count[count.length] = new Node (string[i], 1)
     }
 }
 //sort letter frequency from most common to least common
 //biggest to smallest
 selectionSort()
+console.log(count)
 
 //Key rank in the English alphabet
-//https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
-key = ['e','a','r','i','o','t','n','s','l','c','u','d','p','m','h','g','b','f','y','w','k','v','x','z','j','q']
+//http://www.counton.org/explorer/codebreaking/frequency-analysis.php
+key = ['e','t','a','o','i','n','s','h','r','d','l','u','c','m','w','f','y','g','p','b','v','k','x','j','q','z']
 
 //Decrypt
 let newString = ''
